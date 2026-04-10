@@ -98,7 +98,7 @@ export default function Home() {
                         <h2 className="text-xl mb-2">{p.title}</h2>
                         <p className="text-gray-400 text-sm">{p.desc}</p>
                         {p.demo && (
-                            <iframe src={p.demo} className="w-full h-48 mt-3" />
+                            <a href={p.demo} target="_blank" className="text-blue-400 mt-2 inline-block">Ver Demo</a>
                         )}
                     </div>
                 ))}
