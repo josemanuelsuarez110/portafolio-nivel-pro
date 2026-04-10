@@ -48,6 +48,16 @@ class SaleSchema(BaseModel):
 
 app = FastAPI(title="Portafolio Nivel Pro API")
 
+@app.get("/")
+def read_root():
+    return {
+        "message": "Bienvenido a la API del Portafolio Nivel Pro 🚀",
+        "docs": "/docs",
+        "health": "/health",
+        "status": "active"
+    }
+
+
 # Secured CORS
 origin = os.environ.get("FRONTEND_URL", "*")
 app.add_middleware(
