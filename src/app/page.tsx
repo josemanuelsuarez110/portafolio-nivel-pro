@@ -78,7 +78,7 @@ export default function Home() {
     };
 
     return (
-        <main className="min-h-screen bg-black text-white p-6">
+        <main className="min-h-screen text-white p-6" style={{ background: 'linear-gradient(135deg, #10b981, #059669)' }}>
             {/* HERO */}
             <section className="text-center py-16">
                 <h1 className="text-5xl font-bold">Portafolio Jose Suarez</h1>
