@@ -26,8 +26,8 @@ export default function Hero() {
         </h1>
         
         <p className="text-lg text-gray-400 mb-8 max-w-xl mx-auto md:mx-0">
-          Ingeniero en Sistemas de Información <strong className="text-emerald-400 font-semibold">con enfoque en negocio</strong>. 
-          Especialista en arquitectura de datos, analítica avanzada y automatización para decisiones estratégicas de alto impacto.
+          <strong className="text-emerald-400 font-semibold">Doble Titulación:</strong> Ingeniero en Sistemas y Licenciado en Contabilidad. 
+          Especialista en arquitectura de datos, analítica financiera y automatización con un profundo enfoque en negocio y toma de decisiones.
         </p>
 
         <div className="flex flex-wrap items-center justify-center md:justify-start gap-4">

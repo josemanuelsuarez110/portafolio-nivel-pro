@@ -8,7 +8,7 @@ export default function Footer() {
             <span className="font-bold tracking-tight">JOSE MANUEL SUAREZ</span>
           </div>
           <p className="text-gray-500 text-sm max-w-xs mb-4">
-            Ingeniero en Sistemas de Información especializado en arquitectura de datos y soluciones empresariales de alto impacto.
+            Ingeniero en Sistemas de Información y Licenciado en Contabilidad. Especializado en arquitectura de datos y soluciones empresariales de alto impacto.
           </p>
           <div className="flex items-center gap-4 text-gray-500">
             <a href="mailto:josemanuelsuarez110@gmail.com" className="hover:text-emerald-400 transition-colors">
@@ -28,7 +28,7 @@ export default function Footer() {
         
         <div className="flex flex-col items-center md:items-end gap-2 text-sm">
           <p className="text-gray-300 font-medium">© {new Date().getFullYear()} JOSE MANUEL SUAREZ. <span className="text-emerald-500">Todos los derechos reservados.</span></p>
-          <p className="text-gray-600 text-xs tracking-widest uppercase">Ingeniería de Sistemas de Información</p>
+          <p className="text-gray-600 text-xs tracking-widest uppercase">Doble Titulación: Ingeniería & Negocios</p>
         </div>
       </div>
     </footer>
