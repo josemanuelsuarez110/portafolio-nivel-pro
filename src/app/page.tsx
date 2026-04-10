@@ -78,9 +78,9 @@ export default function Home() {
     };
 
     return (
-        <main className="min-h-screen bg-black text-white p-6" style={{ backgroundImage: 'url(https://picsum.photos/1920/1080?random=1)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        <main className="min-h-screen bg-black text-white p-6">
             {/* HERO */}
-            <section className="text-center py-16 bg-black bg-opacity-70">
+            <section className="text-center py-16">
                 <h1 className="text-5xl font-bold">Portafolio Jose Suarez</h1>
                 <p className="text-gray-400 mt-3">
                     Dashboard de analytics en tiempo real powered by Supabase
