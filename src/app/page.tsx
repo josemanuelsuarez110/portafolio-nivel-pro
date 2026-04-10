@@ -10,12 +10,11 @@ export default function Home() {
     const [supabase, setSupabase] = useState<any>(null);
 
     useEffect(() => {
-        if (process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
+        const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+        const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+        if (url && key && url.startsWith('http')) {
             try {
-                const client = createClient(
-                    process.env.NEXT_PUBLIC_SUPABASE_URL,
-                    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
-                );
+                const client = createClient(url, key);
                 setSupabase(client);
                 fetchData(client);
             } catch (error) {
@@ -34,7 +33,7 @@ export default function Home() {
                 ]);
             }
         } else {
-            // Use dummy data if Supabase not configured
+            // Use dummy data if Supabase not configured or invalid
             setMetrics({
                 records: 25,
                 dashboards: 150,
