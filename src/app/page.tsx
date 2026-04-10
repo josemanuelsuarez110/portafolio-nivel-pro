@@ -78,13 +78,14 @@ export default function Home() {
     };
 
     return (
-        <main className="min-h-screen bg-black text-white p-6">
+        <main className="min-h-screen bg-black text-white p-6" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed' }}>
             {/* HERO */}
-            <section className="text-center py-16">
+            <section className="text-center py-16 bg-black bg-opacity-70">
                 <h1 className="text-5xl font-bold">Portafolio Jose Suarez</h1>
                 <p className="text-gray-400 mt-3">
                     Dashboard de analytics en tiempo real powered by Supabase
                 </p>
+                <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Coding" className="mx-auto mt-6 rounded-full w-32 h-32 object-cover" />
             </section>
 
             {/* METRICS */}
@@ -115,6 +116,7 @@ export default function Home() {
             <section className="grid md:grid-cols-2 gap-6">
                 {projects.map((p, i) => (
                     <div key={i} className="bg-gray-900 p-4 rounded-xl">
+                        <img src={p.image} alt={p.title} className="w-full h-32 object-cover rounded mb-4" />
                         <h2 className="text-xl mb-2">{p.title}</h2>
                         <p className="text-gray-400 text-sm">{p.desc}</p>
                         {p.demo && (
@@ -141,10 +143,12 @@ const projects = [
         title: "Sales Analytics DR",
         desc: "Live analytics dashboard",
         demo: "https://sales-analytics-dr.vercel.app",
+        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
     },
     {
         title: "SmartSales Platform",
         desc: "Scalable analytics system",
         demo: "https://smart-sales-analytics-platform.vercel.app",
+        image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
     },
 ];
