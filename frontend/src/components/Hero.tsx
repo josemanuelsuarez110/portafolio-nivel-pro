@@ -20,14 +20,14 @@ export default function Hero() {
           Disponible para Proyectos de Ingeniería
         </div>
         
-        <h1 className="text-5xl md:text-7xl font-extrabold leading-tight mb-6">
-          Ingeniero en <br />
-          <span className="text-gradient">Sistemas de Información</span>
+        <h1 className="text-5xl md:text-6xl font-extrabold leading-tight mb-6 tracking-tight">
+          Data Engineer / <br />
+          <span className="text-gradient">Analytics Engineer</span>
         </h1>
         
         <p className="text-lg text-gray-400 mb-8 max-w-xl mx-auto md:mx-0">
-          Especialista en arquitectura de datos, analítica avanzada y desarrollo full-stack. 
-          Transformando datos complejos en decisiones estratégicas de alto impacto.
+          Ingeniero en Sistemas de Información <strong className="text-emerald-400 font-semibold">con enfoque en negocio</strong>. 
+          Especialista en arquitectura de datos, analítica avanzada y automatización para decisiones estratégicas de alto impacto.
         </p>
 
         <div className="flex flex-wrap items-center justify-center md:justify-start gap-4">
