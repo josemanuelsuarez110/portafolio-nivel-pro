@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Download, Github, Linkedin } from "lucide-react";
+import { ArrowRight, Download, Github, Linkedin, Mail } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -42,8 +42,9 @@ export default function Hero() {
         </div>
 
         <div className="mt-10 flex items-center justify-center md:justify-start gap-6 text-gray-500">
-          <a href="#" className="hover:text-emerald-400 transition-colors"><Github size={24} /></a>
-          <a href="#" className="hover:text-emerald-400 transition-colors"><Linkedin size={24} /></a>
+          <a href="mailto:josemanuelsuarez110@gmail.com" className="hover:text-emerald-400 transition-colors" title="Email"><Mail size={24} /></a>
+          <a href="https://www.github.com/josemanuelsuarez110" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-400 transition-colors" title="GitHub"><Github size={24} /></a>
+          <a href="https://www.linkedin.com/in/josemanuelsuarez110" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-400 transition-colors" title="LinkedIn"><Linkedin size={24} /></a>
         </div>
       </motion.div>
 
