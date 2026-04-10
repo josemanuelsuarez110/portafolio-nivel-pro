@@ -74,6 +74,7 @@ const credentials = [
     date: "Verified Certification",
     icon: <Headset size={24} />,
     color: "from-sky-400 to-blue-600",
+    tags: ["IT Support", "Troubleshooting", "Customer Success"]
   },
   {
     title: "Python Essentials 1",
