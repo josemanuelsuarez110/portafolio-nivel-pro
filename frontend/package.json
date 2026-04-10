@@ -1,6 +1,7 @@
 {
-  "name": "portafolio-nivel-pro",
-  "version": "1.0.0",
+  "name": "frontend",
+  "version": "1.0.1",
+  "description": "Portafolio Nivel Pro - Frontend",
   "private": true,
   "scripts": {
     "dev": "next dev",
