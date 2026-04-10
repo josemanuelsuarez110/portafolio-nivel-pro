@@ -11,12 +11,28 @@ export default function Home() {
 
     useEffect(() => {
         if (process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
-            const client = createClient(
-                process.env.NEXT_PUBLIC_SUPABASE_URL,
-                process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
-            );
-            setSupabase(client);
-            fetchData(client);
+            try {
+                const client = createClient(
+                    process.env.NEXT_PUBLIC_SUPABASE_URL,
+                    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+                );
+                setSupabase(client);
+                fetchData(client);
+            } catch (error) {
+                console.error('Error creating Supabase client:', error);
+                // Fall back to dummy data
+                setMetrics({
+                    records: 25,
+                    dashboards: 150,
+                    pipelines: 5
+                });
+                setChartData([
+                    { name: "Ene", ventas: 400 },
+                    { name: "Feb", ventas: 700 },
+                    { name: "Mar", ventas: 1200 },
+                    { name: "Abr", ventas: 900 },
+                ]);
+            }
         } else {
             // Use dummy data if Supabase not configured
             setMetrics({
@@ -34,18 +50,23 @@ export default function Home() {
     }, []);
 
     const fetchData = async (client: any) => {
-        const { data } = await client
-            .from("portfolio_metrics")
-            .select("*");
+        try {
+            const { data } = await client
+                .from("portfolio_metrics")
+                .select("*");
 
-        if (data) {
-            const metricsObj: any = {};
-            data.forEach((item: any) => {
-                if (item.metric_name === "Proyectos Completados") metricsObj.records = item.value;
-                if (item.metric_name === "Clientes Satisfechos") metricsObj.dashboards = item.value;
-                if (item.metric_name === "Años de Experiencia") metricsObj.pipelines = item.value;
-            });
-            setMetrics(metricsObj);
+            if (data) {
+                const metricsObj: any = {};
+                data.forEach((item: any) => {
+                    if (item.metric_name === "Proyectos Completados") metricsObj.records = item.value;
+                    if (item.metric_name === "Clientes Satisfechos") metricsObj.dashboards = item.value;
+                    if (item.metric_name === "Años de Experiencia") metricsObj.pipelines = item.value;
+                });
+                setMetrics(metricsObj);
+            }
+        } catch (error) {
+            console.error('Error fetching data from Supabase:', error);
+            // Keep dummy data
         }
 
         // fake dynamic chart data (can replace with real table)
