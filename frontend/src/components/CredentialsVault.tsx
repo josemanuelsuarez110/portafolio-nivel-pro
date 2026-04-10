@@ -42,6 +42,7 @@ const credentials = [
     date: "Verified Career Path",
     icon: <ShieldCheck size={24} />,
     color: "from-cyan-500 to-blue-500",
+    tags: ["Cybersecurity", "Network Defense", "Threat Intelligence"]
   },
   {
     title: "Flujo de Caja (Cash Flow)",
