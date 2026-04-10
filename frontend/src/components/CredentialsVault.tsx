@@ -75,12 +75,20 @@ const credentials = [
     color: "from-sky-400 to-blue-600",
   },
   {
-    title: "Python Essentials 1 & 2",
-    institution: "Cisco Networking Academy",
+    title: "Python Essentials 1",
+    institution: "Cisco Networking Academy / Python Institute",
     date: "Verified Certification",
     icon: <Code size={24} />,
-    color: "from-yellow-400 to-orange-600",
-    tags: ["Python", "Algorithms", "Data Structures"]
+    color: "from-yellow-400 to-orange-500",
+    tags: ["Python", "Fundamentals", "Logic"]
+  },
+  {
+    title: "Python Essentials 2",
+    institution: "Cisco Networking Academy / Python Institute",
+    date: "Verified Certification",
+    icon: <Code size={24} />,
+    color: "from-amber-500 to-orange-700",
+    tags: ["Advanced Python", "Algorithms", "Data Structures"]
   },
   {
     title: "Networking Basics",
