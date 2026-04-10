@@ -64,7 +64,7 @@ export default function Hero() {
           
           <div className="absolute inset-2 rounded-full overflow-hidden border-4 border-white/5 shadow-2xl shadow-emerald-500/40">
             <img 
-              src="/jose_suarez_profile_1775847549103.png" 
+              src="/jose_suarez_profile_new.jpg" 
               alt="JOSE MANUEL SUAREZ" 
               className="w-full h-full object-cover"
             />
