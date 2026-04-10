@@ -5,8 +5,8 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-    title: 'Data Engineer Portfolio',
-    description: 'Real-time analytics dashboard powered by Supabase',
+    title: 'Portafolio Jose Suarez',
+    description: 'Portafolio profesional con dashboard en tiempo real powered by Supabase',
 }
 
 export default function RootLayout({

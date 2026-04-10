@@ -38,9 +38,9 @@ export default function Home() {
         <main className="min-h-screen bg-black text-white p-6">
             {/* HERO */}
             <section className="text-center py-16">
-                <h1 className="text-5xl font-bold">Data Engineer Portfolio</h1>
+                <h1 className="text-5xl font-bold">Portafolio Jose Suarez</h1>
                 <p className="text-gray-400 mt-3">
-                    Real-time analytics dashboard powered by Supabase
+                    Dashboard de analytics en tiempo real powered by Supabase
                 </p>
             </section>
 
