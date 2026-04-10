@@ -71,22 +71,22 @@ export default function Home() {
             <section className="grid md:grid-cols-3 gap-6 mb-10">
                 {metrics && (
                     <>
-                        <Card title="Records" value={metrics.records} />
-                        <Card title="Dashboards" value={metrics.dashboards} />
-                        <Card title="Pipelines" value={metrics.pipelines} />
+                        <Card title="Proyectos Completados" value={metrics.records} />
+                        <Card title="Clientes Satisfechos" value={metrics.dashboards} />
+                        <Card title="Años de Experiencia" value={metrics.pipelines} />
                     </>
                 )}
             </section>
 
             {/* REAL CHART */}
             <section className="bg-gray-900 p-6 rounded-xl mb-10">
-                <h2 className="text-xl mb-4">Sales Analytics</h2>
+                <h2 className="text-xl mb-4">Analytics de Ventas</h2>
                 <ResponsiveContainer width="100%" height={300}>
                     <BarChart data={chartData}>
                         <XAxis dataKey="name" />
                         <YAxis />
                         <Tooltip />
-                        <Bar dataKey="sales" />
+                        <Bar dataKey="ventas" />
                     </BarChart>
                 </ResponsiveContainer>
             </section>
