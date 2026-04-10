@@ -4,33 +4,56 @@ import { useEffect, useState } from "react";
 import { createClient } from "@supabase/supabase-js";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
 
-const supabase = createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-);
-
 export default function Home() {
     const [metrics, setMetrics] = useState<any>(null);
     const [chartData, setChartData] = useState<any[]>([]);
+    const [supabase, setSupabase] = useState<any>(null);
 
     useEffect(() => {
-        fetchData();
+        if (process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
+            const client = createClient(
+                process.env.NEXT_PUBLIC_SUPABASE_URL,
+                process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+            );
+            setSupabase(client);
+            fetchData(client);
+        } else {
+            // Use dummy data if Supabase not configured
+            setMetrics({
+                records: 25,
+                dashboards: 150,
+                pipelines: 5
+            });
+            setChartData([
+                { name: "Ene", ventas: 400 },
+                { name: "Feb", ventas: 700 },
+                { name: "Mar", ventas: 1200 },
+                { name: "Abr", ventas: 900 },
+            ]);
+        }
     }, []);
 
-    const fetchData = async () => {
-        const { data } = await supabase
+    const fetchData = async (client: any) => {
+        const { data } = await client
             .from("portfolio_metrics")
-            .select("*")
-            .single();
+            .select("*");
 
-        setMetrics(data);
+        if (data) {
+            const metricsObj: any = {};
+            data.forEach((item: any) => {
+                if (item.metric_name === "Proyectos Completados") metricsObj.records = item.value;
+                if (item.metric_name === "Clientes Satisfechos") metricsObj.dashboards = item.value;
+                if (item.metric_name === "Años de Experiencia") metricsObj.pipelines = item.value;
+            });
+            setMetrics(metricsObj);
+        }
 
         // fake dynamic chart data (can replace with real table)
         setChartData([
-            { name: "Jan", sales: 400 },
-            { name: "Feb", sales: 700 },
-            { name: "Mar", sales: 1200 },
-            { name: "Apr", sales: 900 },
+            { name: "Ene", ventas: 400 },
+            { name: "Feb", ventas: 700 },
+            { name: "Mar", ventas: 1200 },
+            { name: "Abr", ventas: 900 },
         ]);
     };
 
