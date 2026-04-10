@@ -35,10 +35,14 @@ export default function Hero() {
             Ver Proyectos
             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
           </button>
-          <button className="px-6 py-3 rounded-full border border-white/10 hover:bg-white/5 transition-colors flex items-center gap-2">
+          <a 
+            href="/cv_jose_manuel_suarez.pdf" 
+            download="CV_Jose_Manuel_Suarez.pdf"
+            className="px-6 py-3 rounded-full border border-white/10 hover:bg-white/5 transition-colors flex items-center gap-2"
+          >
             <Download size={18} />
             CV
-          </button>
+          </a>
         </div>
 
         <div className="mt-10 flex items-center justify-center md:justify-start gap-6 text-gray-500">
