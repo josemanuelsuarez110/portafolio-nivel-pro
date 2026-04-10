@@ -12,12 +12,9 @@ export default function Footer() {
           </p>
         </div>
         
-        <div className="flex flex-col items-center md:items-end gap-2 text-sm text-gray-500">
-          <p>© {new Date().getFullYear()} Jose Suarez. Todos los derechos reservados.</p>
-          <p className="flex items-center gap-2">
-            Built with 
-            <span className="text-emerald-500">Next.js & Supabase</span>
-          </p>
+        <div className="flex flex-col items-center md:items-end gap-2 text-sm">
+          <p className="text-gray-300 font-medium">© {new Date().getFullYear()} Jose Suarez. <span className="text-emerald-500">Todos los derechos reservados.</span></p>
+          <p className="text-gray-600 text-xs tracking-widest uppercase">Ingeniería de Sistemas de Información</p>
         </div>
       </div>
     </footer>
