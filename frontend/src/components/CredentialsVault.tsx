@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { GraduationCap, Award, ShieldCheck, Cpu, Briefcase } from "lucide-react";
+import { GraduationCap, Award, ShieldCheck, Cpu, Briefcase, PieChart, ShieldAlert, Lock, Headset } from "lucide-react";
 
 const credentials = [
   {
@@ -42,7 +42,38 @@ const credentials = [
     date: "Verified Career Path",
     icon: <ShieldCheck size={24} />,
     color: "from-cyan-500 to-blue-500",
-    tags: ["Cybersecurity", "Network Defense", "Threat Intelligence"]
+  },
+  {
+    title: "Flujo de Caja (Cash Flow)",
+    institution: "HP LIFE Foundation",
+    date: "Certificación de Negocios",
+    icon: <PieChart size={24} />,
+    color: "from-blue-500 to-indigo-600",
+    tags: ["Gestión Financiera", "Toma de Decisiones", "Finanzas"]
+  },
+  {
+    title: "Introduction to Cybersecurity",
+    institution: "Cisco Networking Academy",
+    date: "Verified Certification",
+    icon: <ShieldAlert size={24} />,
+    color: "from-green-500 to-emerald-600",
+    tags: ["Cyber Threats", "Data Protection", "Security Basics"]
+  },
+  {
+    title: "ISO 27001: Implementación y Auditoría",
+    institution: "Udemy",
+    date: "Certificación de Experto",
+    icon: <Lock size={24} />,
+    color: "from-violet-500 to-purple-700",
+    tags: ["ISO 27001", "Compliance", "Auditoría TI"]
+  },
+  {
+    title: "IT Customer Support Basics",
+    institution: "Cisco Networking Academy",
+    date: "Verified Certification",
+    icon: <Headset size={24} />,
+    color: "from-sky-400 to-blue-600",
+    tags: ["IT Support", "Troubleshooting", "Customer Success"]
   }
 ];
 
