@@ -1,0 +1,107 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import { createClient } from "@supabase/supabase-js";
+import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
+
+const supabase = createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+);
+
+export default function Home() {
+    const [metrics, setMetrics] = useState<any>(null);
+    const [chartData, setChartData] = useState<any[]>([]);
+
+    useEffect(() => {
+        fetchData();
+    }, []);
+
+    const fetchData = async () => {
+        const { data } = await supabase
+            .from("portfolio_metrics")
+            .select("*")
+            .single();
+
+        setMetrics(data);
+
+        // fake dynamic chart data (can replace with real table)
+        setChartData([
+            { name: "Jan", sales: 400 },
+            { name: "Feb", sales: 700 },
+            { name: "Mar", sales: 1200 },
+            { name: "Apr", sales: 900 },
+        ]);
+    };
+
+    return (
+        <main className="min-h-screen bg-black text-white p-6">
+            {/* HERO */}
+            <section className="text-center py-16">
+                <h1 className="text-5xl font-bold">Data Engineer Portfolio</h1>
+                <p className="text-gray-400 mt-3">
+                    Real-time analytics dashboard powered by Supabase
+                </p>
+            </section>
+
+            {/* METRICS */}
+            <section className="grid md:grid-cols-3 gap-6 mb-10">
+                {metrics && (
+                    <>
+                        <Card title="Records" value={metrics.records} />
+                        <Card title="Dashboards" value={metrics.dashboards} />
+                        <Card title="Pipelines" value={metrics.pipelines} />
+                    </>
+                )}
+            </section>
+
+            {/* REAL CHART */}
+            <section className="bg-gray-900 p-6 rounded-xl mb-10">
+                <h2 className="text-xl mb-4">Sales Analytics</h2>
+                <ResponsiveContainer width="100%" height={300}>
+                    <BarChart data={chartData}>
+                        <XAxis dataKey="name" />
+                        <YAxis />
+                        <Tooltip />
+                        <Bar dataKey="sales" />
+                    </BarChart>
+                </ResponsiveContainer>
+            </section>
+
+            {/* PROJECTS */}
+            <section className="grid md:grid-cols-2 gap-6">
+                {projects.map((p, i) => (
+                    <div key={i} className="bg-gray-900 p-4 rounded-xl">
+                        <h2 className="text-xl mb-2">{p.title}</h2>
+                        <p className="text-gray-400 text-sm">{p.desc}</p>
+                        {p.demo && (
+                            <iframe src={p.demo} className="w-full h-48 mt-3" />
+                        )}
+                    </div>
+                ))}
+            </section>
+        </main>
+    );
+}
+
+function Card({ title, value }: any) {
+    return (
+        <div className="bg-gray-900 p-6 rounded-xl text-center">
+            <p className="text-gray-400">{title}</p>
+            <h3 className="text-2xl font-bold">{value}</h3>
+        </div>
+    );
+}
+
+const projects = [
+    {
+        title: "Sales Analytics DR",
+        desc: "Live analytics dashboard",
+        demo: "https://sales-analytics-dr.vercel.app",
+    },
+    {
+        title: "SmartSales Platform",
+        desc: "Scalable analytics system",
+        demo: "https://smart-sales-analytics-platform.vercel.app",
+    },
+];
