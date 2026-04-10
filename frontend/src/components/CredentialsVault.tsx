@@ -35,6 +35,14 @@ const credentials = [
     icon: <Briefcase size={24} />,
     color: "from-amber-500 to-orange-500",
     tags: ["Análisis Financiero", "Estrategia de Costos", "Business Intelligence"]
+  },
+  {
+    title: "Junior Cybersecurity Analyst",
+    institution: "Cisco Networking Academy",
+    date: "Verified Career Path",
+    icon: <ShieldCheck size={24} />,
+    color: "from-cyan-500 to-blue-500",
+    tags: ["Cybersecurity", "Network Defense", "Threat Intelligence"]
   }
 ];
 
@@ -48,7 +56,7 @@ export default function CredentialsVault() {
         </p>
       </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+      <div className="flex flex-wrap justify-center gap-4 md:gap-8 max-w-6xl mx-auto">
         {credentials.map((cred, i) => (
           <motion.div
             key={i}
@@ -56,7 +64,7 @@ export default function CredentialsVault() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: i * 0.1 }}
             viewport={{ once: true }}
-            className="glass-card p-8 group relative overflow-hidden"
+            className="glass-card p-8 group relative overflow-hidden w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.33%-1.5rem)] min-w-[280px]"
           >
             {/* Background Glow */}
             <div className={`absolute -right-4 -top-4 w-24 h-24 bg-gradient-to-br ${cred.color} opacity-10 blur-2xl group-hover:opacity-20 transition-opacity`} />
