@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { GraduationCap, Award, ShieldCheck, Cpu, Briefcase, PieChart, ShieldAlert, Lock, Headset } from "lucide-react";
+import { GraduationCap, Award, ShieldCheck, Cpu, Briefcase, PieChart, ShieldAlert, Lock, Headset, Code, Network, Laptop, Package, Key } from "lucide-react";
 
 const credentials = [
   {
@@ -73,7 +73,62 @@ const credentials = [
     date: "Verified Certification",
     icon: <Headset size={24} />,
     color: "from-sky-400 to-blue-600",
-    tags: ["IT Support", "Troubleshooting", "Customer Success"]
+  },
+  {
+    title: "Python Essentials 1 & 2",
+    institution: "Cisco Networking Academy",
+    date: "Verified Certification",
+    icon: <Code size={24} />,
+    color: "from-yellow-400 to-orange-600",
+    tags: ["Python", "Algorithms", "Data Structures"]
+  },
+  {
+    title: "Networking Basics",
+    institution: "Cisco Networking Academy",
+    date: "Verified Certification",
+    icon: <Network size={24} />,
+    color: "from-blue-500 to-cyan-600",
+    tags: ["Networks", "Protocols", "Infrastructure"]
+  },
+  {
+    title: "Cyber Threat Management",
+    institution: "Cisco Networking Academy",
+    date: "Verified Certification",
+    icon: <ShieldAlert size={24} />,
+    color: "from-red-500 to-rose-700",
+    tags: ["Threat Intelligence", "Incident Response", "Cyber Defense"]
+  },
+  {
+    title: "Endpoint Security",
+    institution: "Cisco Networking Academy",
+    date: "Verified Certification",
+    icon: <Laptop size={24} />,
+    color: "from-slate-500 to-stone-700",
+    tags: ["Endpoint Protection", "Malware Analysis", "SecOps"]
+  },
+  {
+    title: "Administración del Inventario",
+    institution: "HP LIFE Foundation",
+    date: "Certificación Ejecutiva",
+    icon: <Package size={24} />,
+    color: "from-indigo-400 to-blue-600",
+    tags: ["Supply Chain", "Operations", "Management"]
+  },
+  {
+    title: "Camino a la Certificación ISO 27001",
+    institution: "Seguridad Cero",
+    date: "Certificación en Ciberseguridad",
+    icon: <Lock size={24} />,
+    color: "from-violet-600 to-fuchsia-700",
+    tags: ["ISO 27001", "Compliance", "Gestión de Riesgos"]
+  },
+  {
+    title: "ISC2 CC Pre-assessment",
+    institution: "ISC2",
+    date: "Cybersecurity Certification",
+    icon: <Key size={24} />,
+    color: "from-emerald-500 to-teal-700",
+    tags: ["Security Concepts", "Risk Management", "Security Operations"]
   }
 ];
 
