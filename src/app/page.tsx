@@ -78,14 +78,14 @@ export default function Home() {
     };
 
     return (
-        <main className="min-h-screen bg-black text-white p-6" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed' }}>
+        <main className="min-h-screen bg-black text-white p-6" style={{ backgroundImage: 'url(https://picsum.photos/1920/1080?random=1)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
             {/* HERO */}
             <section className="text-center py-16 bg-black bg-opacity-70">
                 <h1 className="text-5xl font-bold">Portafolio Jose Suarez</h1>
                 <p className="text-gray-400 mt-3">
                     Dashboard de analytics en tiempo real powered by Supabase
                 </p>
-                <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Coding" className="mx-auto mt-6 rounded-full w-32 h-32 object-cover" />
+                <img src="https://picsum.photos/300/300?random=2" alt="Coding" className="mx-auto mt-6 rounded-full w-32 h-32 object-cover" />
             </section>
 
             {/* METRICS */}
@@ -143,12 +143,12 @@ const projects = [
         title: "Sales Analytics DR",
         desc: "Live analytics dashboard",
         demo: "https://sales-analytics-dr.vercel.app",
-        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+        image: "https://picsum.photos/400/300?random=3"
     },
     {
         title: "SmartSales Platform",
         desc: "Scalable analytics system",
         demo: "https://smart-sales-analytics-platform.vercel.app",
-        image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+        image: "https://picsum.photos/400/300?random=4"
     },
 ];
