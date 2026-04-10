@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { GraduationCap, Award, ShieldCheck, Cpu } from "lucide-react";
+import { GraduationCap, Award, ShieldCheck, Cpu, Briefcase } from "lucide-react";
 
 const credentials = [
   {
@@ -27,6 +27,14 @@ const credentials = [
     icon: <Award size={24} />,
     color: "from-purple-500 to-pink-500",
     tags: ["Machine Learning", "Python", "Predictive Analytics"]
+  },
+  {
+    title: "Licenciatura en Contabilidad",
+    institution: "Universidad UFHEC",
+    date: "Grado Académico",
+    icon: <Briefcase size={24} />,
+    color: "from-amber-500 to-orange-500",
+    tags: ["Análisis Financiero", "Estrategia de Costos", "Business Intelligence"]
   }
 ];
 
@@ -40,7 +48,7 @@ export default function CredentialsVault() {
         </p>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-8">
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
         {credentials.map((cred, i) => (
           <motion.div
             key={i}
